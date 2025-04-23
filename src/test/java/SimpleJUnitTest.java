@@ -1,8 +1,10 @@
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
 public class SimpleJUnitTest {
 
@@ -10,7 +12,7 @@ public class SimpleJUnitTest {
 
     @BeforeAll
     static void beforeALll() {
-        System.out.println("### beforeAll()\n");
+        System.out.println("\n### beforeAll()\n");
     }
 
     @BeforeEach
@@ -23,6 +25,11 @@ public class SimpleJUnitTest {
     void afterEach() {
         System.out.println("###    afterEach()\n");
         result = 0;
+    }
+
+    @AfterAll
+    static void afterALll() {
+        System.out.println("\n### afterAll()\n");
     }
 
     @Test
