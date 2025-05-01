@@ -20,8 +20,16 @@ public class PracticeFromTests {
     }
 
     @Test
-void fillFormsTests () {
+void fillFormTest () {
         open("/automation-practice-form");
+        $("#firstName").setValue("John");
+        $("#lastName").setValue("Doe");
+        $("#userEmail").setValue("johndoe6659@mail.com");
+        $("#gender-radio-1.custom-control-input").click();
+        $("#userNumber").setValue("+49841658948");
+        $("#dateOfBirthInput").click();
+
+        $("#submit").click();
     }
 }
 
