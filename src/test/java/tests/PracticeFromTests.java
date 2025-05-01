@@ -5,8 +5,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+
 
 public class PracticeFromTests {
 
@@ -25,7 +27,7 @@ void fillFormTest () {
         $("#firstName").setValue("John");
         $("#lastName").setValue("Doe");
         $("#userEmail").setValue("johndoe6659@mail.com");
-        $("#gender-radio-1.custom-control-input").click();
+        $(byText("Male")).click();
         $("#userNumber").setValue("+49841658948");
         $("#dateOfBirthInput").click();
 
