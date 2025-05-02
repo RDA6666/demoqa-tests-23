@@ -27,10 +27,15 @@ void fillFormTest () {
         $("#firstName").setValue("John");
         $("#lastName").setValue("Doe");
         $("#userEmail").setValue("johndoe6659@mail.com");
-        $(byText("Male")).click();
-        $("#userNumber").setValue("+49841658948");
+        $("#genterWrapper").$(byText("Male")).click();
+        $("#userNumber").setValue("89841658948");
         $("#dateOfBirthInput").click();
-
+        $(".react-datepicker__year-select").click();
+        $(".react-datepicker__year-select").selectOption("1986");
+        $(".react-datepicker__month-select").selectOption("May");
+        $(".react-datepicker__day--004").click();
+        $("#subjectsInput").setValue("Maths").pressEnter();
+        $(byText("Reading")).click();
         $("#submit").click();
     }
 }
