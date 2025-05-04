@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class PracticeFromTests {
@@ -24,6 +23,8 @@ public class PracticeFromTests {
     @Test
     void fillFormTest () {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         $("#firstName").setValue("John");
         $("#lastName").setValue("Doe");
         $("#userEmail").setValue("johndoe6659@mail.com");
@@ -37,7 +38,9 @@ public class PracticeFromTests {
         $("#subjectsInput").setValue("Maths").pressEnter();
         $(byText("Reading")).click();
         $("#uploadPicture").uploadFromClasspath("Me.JPG");
-        $("#submit").click();
+        $("#currentAddress").setValue("Pnz");
+        $(".css-1wa3eu0-placeholder");
+        //$("#submit").click();
     }
 }
 
