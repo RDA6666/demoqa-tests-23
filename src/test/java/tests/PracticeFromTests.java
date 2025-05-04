@@ -39,8 +39,22 @@ public class PracticeFromTests {
         $(byText("Reading")).click();
         $("#uploadPicture").uploadFromClasspath("Me.JPG");
         $("#currentAddress").setValue("Pnz");
-        $(".css-1wa3eu0-placeholder");
-        //$("#submit").click();
+        $("#state").click();
+        $("#react-select-3-option-3").click();
+        $("#city").click();
+        $("#react-select-4-option-1").click();
+        $("#submit").click();
+
+        $x("//td[contains(text(),'Student Name')]/../td[2]").shouldHave(text("John Doe"));
+        $x("//td[contains(text(),'Student Email')]/../td[2]").shouldHave(text("johndoe6659@mail.com"));
+        $x("//td[contains(text(),'Gender')]/../td[2]").shouldHave(text("Male"));
+        $x("//td[contains(text(),'Mobile')]/../td[2]").shouldHave(text("89841658948"));
+        $x("//td[contains(text(),'Date of Birth')]/../td[2]").shouldHave(text("04 <May>,1986"));
+        $x("//td[contains(text(),'Subjects')]/../td[2]").shouldHave(text("Maths"));
+        $x("//td[contains(text(),'Hobbies')]/../td[2]").shouldHave(text("Reading"));
+        $x("//td[contains(text(),'Picture')]/../td[2]").shouldHave(text("Me.png"));
+        $x("//td[contains(text(),'Address')]/../td[2]").shouldHave(text("Pnz"));
+        $x("//td[contains(text(),'State and City')]/../td[2]").shouldHave(text("Haryana Kamal"));
     }
 }
 
