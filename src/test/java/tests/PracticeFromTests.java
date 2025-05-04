@@ -36,7 +36,7 @@ void fillFormTest () {
         $(".react-datepicker__day--004").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
         $(byText("Reading")).click();
-        $("#uploadPicture").uploadFromClasspath("Capture.JPG");
+        $("#uploadPicture").uploadFromClasspath("Me.JPG");
         $(.)
         $("#submit").click();
     }
