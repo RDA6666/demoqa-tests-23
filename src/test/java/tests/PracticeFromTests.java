@@ -37,7 +37,6 @@ void fillFormTest () {
         $("#subjectsInput").setValue("Maths").pressEnter();
         $(byText("Reading")).click();
         $("#uploadPicture").uploadFromClasspath("Me.JPG");
-        $(.)
         $("#submit").click();
     }
 }
