@@ -1,8 +1,9 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Cookie;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -22,6 +23,7 @@ public class PracticeFromTests {
 
     @Test
     void fillFormTest () {
+
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
