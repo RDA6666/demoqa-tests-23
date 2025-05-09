@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -39,6 +41,7 @@ public class PracticeFromTests {
         $(".react-datepicker__day--004").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
         $(byText("Reading")).click();
+        File file = new File("src/test/resources/Me.JPG");
         $("#uploadPicture").uploadFromClasspath("Me.JPG");
         $("#currentAddress").setValue("Pnz");
         $("#state").click();
@@ -59,5 +62,6 @@ public class PracticeFromTests {
         $x("//td[contains(text(),'State and City')]/../td[2]").shouldHave(text("Haryana Kamal"));
     }
 }
+
 
 
