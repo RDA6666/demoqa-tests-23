@@ -30,9 +30,11 @@ public class NegativeRegistrationTests {
             $("#userNumber").setValue("a");
             $("#submit").click();
 
-            $("#firstName").shouldHave(text("John Doe"));
-            $("#lastName").shouldHave(text("Male"));
-            $("#userNumber").shouldHave(text("a"));
-
+            $(".row").shouldNotHave(text("Thanks for submitting the form"));
         }
+
+        @Test
+        void minimumFieldsRegistrationTest () {
+
+        }    }
 }
