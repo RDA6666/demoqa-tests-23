@@ -16,7 +16,7 @@ public class RegistrationFormFakerTests extends TestBase {
     @Test
     void successfulRegistrationTest() {
 
-        Faker faker = new Faker(new Locale("en-US"));                                                         //random test data generation
+        Faker faker = new Faker(new Locale("en-US"));                             //random test data generation
         String firstName = faker.name().firstName(),
                 lastName = faker.name().lastName(),
                 userEmail = faker.internet().emailAddress(),
@@ -48,7 +48,7 @@ public class RegistrationFormFakerTests extends TestBase {
 
         $("#uploadPicture").uploadFromClasspath("images/Me.jpg");                       //file upload
 
-        $("#currentAddress").setValue(userCurrentAddress);                                         //textarea
+        $("#currentAddress").setValue(userCurrentAddress);                                        //text area
 
         $("#state").click();                                                     //text fields-dropdown lists
         $("#stateCity-wrapper").$(byText("NCR")).click();
@@ -57,7 +57,8 @@ public class RegistrationFormFakerTests extends TestBase {
 
         $("#submit").click();                                                                        //button
 
-        $(".modal-dialog").should(appear);                                                       //assertions
+        $(".modal-dialog").should(appear);                                                        //assertion
+
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text(firstName),
                 text(lastName), text(userEmail), text(userPhoneNumber), text(userCurrentAddress));
