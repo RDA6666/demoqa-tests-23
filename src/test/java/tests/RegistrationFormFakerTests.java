@@ -3,6 +3,8 @@ package tests;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 
+import java.util.Locale;
+
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -14,7 +16,7 @@ public class RegistrationFormFakerTests extends TestBase {
     @Test
     void successfulRegistrationTest() {
 
-        Faker faker = new Faker();                                                         //random test data generation
+        Faker faker = new Faker(new Locale("en-US"));                                                         //random test data generation
         String firstName = faker.name().firstName(),
                 lastName = faker.name().lastName(),
                 userEmail = faker.internet().emailAddress(),
