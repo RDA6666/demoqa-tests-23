@@ -17,17 +17,22 @@ public class RegistrationTests extends TestBase {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
-        $("#firstName").setValue(firstName);
+        $("#firstName").setValue(firstName);                                                     //text field
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(userEmail);
-        $("#genterWrapper").$(byText("Other")).click();
-        $("#userNumber").setValue(userPhoneNumber);
-        $("#dateOfBirthInput").click();
+
+        $("#genterWrapper").$(byText("Other")).click();                             //radio button
+
+        $("#userNumber").setValue(userPhoneNumber);                                              //text field
+
+        $("#dateOfBirthInput").click();                                                            //calendar
         $(".react-datepicker__month-select").selectOption("July");
         $(".react-datepicker__year-select").selectOption("2008");
         $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
-        $("#subjectsInput").setValue("Math").pressEnter();
-        $("#hobbiesWrapper").$(byText("Sports")).click();
+
+        $("#subjectsInput").setValue("Math").pressEnter();                        //text field-Drop-down list
+
+        $("#hobbiesWrapper").$(byText("Sports")).click();                               //checkbox
         $("#uploadPicture").uploadFromClasspath("images/Me.png");
         $("#currentAddress").setValue(userCurrentAddress);
         $("#state").click();
