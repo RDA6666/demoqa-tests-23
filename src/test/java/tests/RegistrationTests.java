@@ -48,6 +48,6 @@ public class RegistrationTests extends TestBase {
         $(".modal-dialog").should(appear);                                                       //assertions
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text(firstName), text(lastName),
-                text(userEmail), text(userPhoneNumber));
+                text(userEmail), text(userPhoneNumber), text(userCurrentAddress));
     }
 }
