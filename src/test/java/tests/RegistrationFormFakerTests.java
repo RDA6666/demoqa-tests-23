@@ -11,7 +11,7 @@ import static tests.TestData.*;
 public class RegistrationFormFakerTests extends TestBase {
 
     @Test
-    void successfulRegistrationTest() {
+    void fullRegistrationTest() {
 
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
