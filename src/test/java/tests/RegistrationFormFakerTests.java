@@ -18,7 +18,8 @@ public class RegistrationFormFakerTests extends TestBase {
         String firstName = faker.name().firstName(),
                 lastName = faker.name().lastName(),
                 userEmail = faker.internet().emailAddress(),
-                userPhoneNumber = faker.phoneNumber().cellPhone(),
+//              userPhoneNumber = faker.phoneNumber().cellPhone(),
+                userPhoneNumber = "1234567890",
                 userCurrentAddress = faker.address().fullAddress();
 
         open("/automation-practice-form");
