@@ -17,7 +17,7 @@ public class RegistrationTests extends TestBase {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
-        $("#firstName").setValue(firstName);                                                     //text field
+        $("#firstName").setValue(firstName);                                                    //text fields
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(userEmail);
 
@@ -30,18 +30,22 @@ public class RegistrationTests extends TestBase {
         $(".react-datepicker__year-select").selectOption("2008");
         $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
 
-        $("#subjectsInput").setValue("Math").pressEnter();                        //text field-Drop-down list
+        $("#subjectsInput").setValue("Math").pressEnter();                         //text field-dropdown list
 
         $("#hobbiesWrapper").$(byText("Sports")).click();                               //checkbox
-        $("#uploadPicture").uploadFromClasspath("images/Me.png");
-        $("#currentAddress").setValue(userCurrentAddress);
-        $("#state").click();
+
+        $("#uploadPicture").uploadFromClasspath("images/Me.jpg");                       //file upload
+
+        $("#currentAddress").setValue(userCurrentAddress);                                         //textarea
+
+        $("#state").click();                                                     //text fields-dropdown lists
         $("#stateCity-wrapper").$(byText("NCR")).click();
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Delhi")).click();
-        $("#submit").click();
 
-        $(".modal-dialog").should(appear);
+        $("#submit").click();                                                                        //button
+
+        $(".modal-dialog").should(appear);                                                       //assertions
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text(firstName), text(lastName),
                 text(userEmail), text(userPhoneNumber));
