@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static tests.TestData.*;
 
-public class RegistrationTests extends TestBase {
+public class RegistrationFormTests extends TestBase {
 
     @Test
     void successfulRegistrationTest() {
@@ -47,7 +47,7 @@ public class RegistrationTests extends TestBase {
 
         $(".modal-dialog").should(appear);                                                       //assertions
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text(firstName), text(lastName),
-                text(userEmail), text(userPhoneNumber), text(userCurrentAddress));
+        $(".table-responsive").shouldHave(text(firstName),
+                text(lastName), text(userEmail), text(userPhoneNumber), text(userCurrentAddress));
     }
 }
