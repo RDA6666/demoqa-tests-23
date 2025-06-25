@@ -6,6 +6,7 @@ import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static tests.TestData.*;
 
 public class RegistrationTests extends TestBase {
 
@@ -16,18 +17,18 @@ public class RegistrationTests extends TestBase {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
-        $("#firstName").setValue("Alex");
-        $("#lastName").setValue("Egorov");
-        $("#userEmail").setValue("alex@egorov.com");
+        $("#firstName").setValue(firstName);
+        $("#lastName").setValue(lastName);
+        $("#userEmail").setValue(userEmail);
         $("#genterWrapper").$(byText("Other")).click();
-        $("#userNumber").setValue("1234567890");
+        $("#userNumber").setValue(userPhoneNumber);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("July");
         $(".react-datepicker__year-select").selectOption("2008");
         $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
         $("#subjectsInput").setValue("Math").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#uploadPicture").uploadFromClasspath("img/1.png");
+        $("#uploadPicture").uploadFromClasspath("Me.png");
         $("#currentAddress").setValue("Some address 1");
         $("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
