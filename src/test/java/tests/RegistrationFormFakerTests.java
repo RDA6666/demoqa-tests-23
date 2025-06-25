@@ -1,40 +1,30 @@
 package tests;
 
-import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
-
-import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-
+import static tests.TestData.*;
 
 public class RegistrationFormFakerTests extends TestBase {
 
     @Test
     void successfulRegistrationTest() {
 
-        Faker faker = new Faker(new Locale("en-US"));                             //random test data generation
-        String firstName = faker.name().firstName(),
-                lastName = faker.name().lastName(),
-                userEmail = faker.internet().emailAddress(),
-                userPhoneNumber = faker.phoneNumber().subscriberNumber(10),
-                userCurrentAddress = faker.address().fullAddress();
-
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
-        $("#firstName").setValue(firstName);                                                    //text fields
-        $("#lastName").setValue(lastName);
-        $("#userEmail").setValue(userEmail);
+        $("#firstName").setValue(randomFirstName);                                              //text fields
+        $("#lastName").setValue(randomLastName);
+        $("#userEmail").setValue(randomUserEmail);
 
         $("#genterWrapper").$(byText("Other")).click();                             //radio button
 
-        $("#userNumber").setValue(userPhoneNumber);                                              //text field
+        $("#userNumber").setValue(randomUserPhoneNumber);                                        //text field
 
         $("#dateOfBirthInput").click();                                                            //calendar
         $(".react-datepicker__month-select").selectOption("July");
@@ -47,7 +37,7 @@ public class RegistrationFormFakerTests extends TestBase {
 
         $("#uploadPicture").uploadFromClasspath("images/Me.jpg");                       //file upload
 
-        $("#currentAddress").setValue(userCurrentAddress);                                        //text area
+        $("#currentAddress").setValue(randomUserCurrentAddress);                                  //text area
 
         $("#state").click();                                                     //text fields-dropdown lists
         $("#stateCity-wrapper").$(byText("NCR")).click();
@@ -59,7 +49,7 @@ public class RegistrationFormFakerTests extends TestBase {
         $(".modal-dialog").should(appear);                                                        //assertion
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text(firstName),
-                text(lastName), text(userEmail), text(userPhoneNumber), text(userCurrentAddress));
+        $(".table-responsive").shouldHave(text(randomFirstName), text(randomLastName),
+                text(randomUserEmail), text(randomUserPhoneNumber), text(randomUserCurrentAddress));
     }
 }
