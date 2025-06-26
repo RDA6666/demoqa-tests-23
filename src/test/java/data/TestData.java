@@ -1,4 +1,4 @@
-package tests;
+package data;
 
 import com.github.javafaker.Faker;
 
