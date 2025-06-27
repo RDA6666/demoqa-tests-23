@@ -35,7 +35,7 @@ public class RegistrationFormFakerTests extends TestBase {
 
         $("#hobbiesWrapper").$(byText("Sports")).click();                               //checkbox
 
-        $("#uploadPicture").uploadFromClasspath("images/Me.jpg");                       //file upload
+        $("#uploadPicture").uploadFromClasspath("images/Me.jpg");                    //file upload
 
         $("#currentAddress").setValue(randomUserCurrentAddress);                                  //text area
 
