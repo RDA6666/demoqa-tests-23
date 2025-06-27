@@ -20,10 +20,15 @@ public class TestData {
             randomUserEmail = faker.internet().emailAddress(),
             randomUserGender = faker.options().option("Male", "Female", "Other"),
             randomUserPhoneNumber = faker.phoneNumber().subscriberNumber(10),
+
             randomUserSubject = faker.options().option("Maths", "Chemistry", "Accounting", "Arts",
                     "Social Studies", "Computer Sciense", "Commerce", "Economics", "English", "History",
                     "Physics", "Biology", "Hindi", "Civics"),
+
             randomUserHobby = faker.options().option("Sports", "Reading", "Music"),
+            randomUserPicture = faker.options().option("images/Me.jpg",
+                    "images/Still me.jpg", "images/Also me.jpg"),
+
             randomUserCurrentAddress = faker.address().fullAddress(),
             randomUserState = faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan"),
             randomUserCity = getRandomUserCity(randomUserState);
