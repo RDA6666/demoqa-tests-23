@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static data.TestData.*;
 
-public class RegistrationFormFakerTests extends TestBase {
+public class RegistrationFormRandomDataTests extends TestBase {
 
     @Test
     void fullRegistrationTest() {
@@ -18,11 +18,11 @@ public class RegistrationFormFakerTests extends TestBase {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
-        $("#firstName").setValue(randomFirstName);                                              //text fields
-        $("#lastName").setValue(randomLastName);
-        $("#userEmail").setValue(randomUserEmail);
+        $("#firstName").setValue(fakerFirstName);                                              //text fields
+        $("#lastName").setValue(fakerLastName);
+        $("#userEmail").setValue(fakerUserEmail);
 
-        $("#genterWrapper").$(byText(randomUserGender)).click();                               //radio button
+        $("#genterWrapper").$(byText(fakerUserGender)).click();                               //radio button
 
         $("#userNumber").setValue(randomUserPhoneNumber);                                        //text field
 
@@ -49,7 +49,7 @@ public class RegistrationFormFakerTests extends TestBase {
         $(".modal-dialog").should(appear);                                                        //assertion
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text(randomFirstName), text(randomLastName),
-                text(randomUserEmail), text(randomUserPhoneNumber), text(randomUserCurrentAddress));
+        $(".table-responsive").shouldHave(text(fakerFirstName), text(fakerLastName),
+                text(fakerUserEmail), text(randomUserPhoneNumber), text(randomUserCurrentAddress));
     }
 }

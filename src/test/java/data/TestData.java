@@ -15,10 +15,10 @@ public class TestData {
 
     static Faker faker = new Faker(new Locale("en-US"));                          //random test data generation
     public static String
-            randomFirstName = faker.name().firstName(),
-            randomLastName = faker.name().lastName(),
-            randomUserEmail = faker.internet().emailAddress(),
-            randomUserGender = faker.options().option("Male", "Female", "Other"),
+            fakerFirstName = faker.name().firstName(),
+            fakerLastName = faker.name().lastName(),
+            fakerUserEmail = faker.internet().emailAddress(),
+            fakerUserGender = faker.options().option("Male", "Female", "Other"),
             randomUserPhoneNumber = faker.phoneNumber().subscriberNumber(10),
 
             randomUserSubject = faker.options().option("Maths", "Chemistry", "Accounting", "Arts",
@@ -46,4 +46,4 @@ public class TestData {
                 return randomUserCity;
             }
 
-}
+    }
