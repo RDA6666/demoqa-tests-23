@@ -26,9 +26,9 @@ public class TestData {
             randomUserHobby = faker.options().option("Sports", "Reading", "Music"),
             randomUserCurrentAddress = faker.address().fullAddress(),
             randomUserState = faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan"),
-            randomUserCity = getRandomCity();
+            randomUserCity = getRandomUserCity(randomUserState);
 
-            public String getRandomCity(String value) {
+            public static String getRandomUserCity(String value) {
                 if (randomUserState.equals("NCR")) randomUserCity = faker.options().option("Delhi", "Gurgaon", "Noida");
                 if (randomUserState.equals("Uttar Pradesh")) randomUserCity = faker.options().option("Agra", "Lucknow", "Merrut");
                 if (randomUserState.equals("Haryana")) randomUserCity = faker.options().option("Karnal", "Panipat");
