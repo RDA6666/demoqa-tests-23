@@ -22,7 +22,7 @@ public class RegistrationFormFakerTests extends TestBase {
         $("#lastName").setValue(randomLastName);
         $("#userEmail").setValue(randomUserEmail);
 
-        $("#genterWrapper").$(byText("Other")).click();                             //radio button
+        $("#genterWrapper").$(byText(randomUserGender)).click();                               //radio button
 
         $("#userNumber").setValue(randomUserPhoneNumber);                                        //text field
 
@@ -31,18 +31,18 @@ public class RegistrationFormFakerTests extends TestBase {
         $(".react-datepicker__year-select").selectOption("2008");
         $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
 
-        $("#subjectsInput").setValue("Math").pressEnter();                         //text field-dropdown list
+        $("#subjectsInput").setValue(randomUserSubject).pressEnter();              //text field-dropdown list
 
-        $("#hobbiesWrapper").$(byText("Sports")).click();                               //checkbox
+        $("#hobbiesWrapper").$(byText(randomUserHobby)).click();                                   //checkbox
 
-        $("#uploadPicture").uploadFromClasspath("images/Me.jpg");                    //file upload
+        $("#uploadPicture").uploadFromClasspath("images/Me.jpg");                       //file upload
 
         $("#currentAddress").setValue(randomUserCurrentAddress);                                  //text area
 
         $("#state").click();                                                     //text fields-dropdown lists
-        $("#stateCity-wrapper").$(byText("NCR")).click();
+        $("#stateCity-wrapper").$(byText(randomUserState)).click();
         $("#city").click();
-        $("#stateCity-wrapper").$(byText("Delhi")).click();
+        $("#stateCity-wrapper").$(byText(randomUserCity)).click();
 
         $("#submit").click();                                                                        //button
 
