@@ -28,11 +28,15 @@ public class TestData {
             randomUserState = faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan"),
             randomUserCity = getRandomUserCity(randomUserState);
 
-            public static String getRandomUserCity(String value) {
-                if (randomUserState.equals("NCR")) randomUserCity = faker.options().option("Delhi", "Gurgaon", "Noida");
-                if (randomUserState.equals("Uttar Pradesh")) randomUserCity = faker.options().option("Agra", "Lucknow", "Merrut");
-                if (randomUserState.equals("Haryana")) randomUserCity = faker.options().option("Karnal", "Panipat");
-                if (randomUserState.equals("Rajasthan")) randomUserCity = faker.options().option("Jaipur", "Jaiselmer");
+            public static String getRandomUserCity(String value) {                                       //random string
+                if (randomUserState.equals("NCR"))
+                    {randomUserCity = faker.options().option("Delhi", "Gurgaon", "Noida");}
+                else if (randomUserState.equals("Uttar Pradesh"))
+                    {randomUserCity = faker.options().option("Agra", "Lucknow", "Merrut");}
+                else if (randomUserState.equals("Haryana"))
+                    {randomUserCity = faker.options().option("Karnal", "Panipat");}
+                else
+                    {randomUserCity = faker.options().option("Jaipur", "Jaiselmer");};
 
                 return randomUserCity;
             }
