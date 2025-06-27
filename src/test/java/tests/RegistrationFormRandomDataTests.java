@@ -18,38 +18,28 @@ public class RegistrationFormRandomDataTests extends TestBase {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
-        $("#firstName").setValue(fakerFirstName);                                              //text fields
+        $("#firstName").setValue(fakerFirstName);                                               //text fields
         $("#lastName").setValue(fakerLastName);
         $("#userEmail").setValue(fakerUserEmail);
-
-        $("#genterWrapper").$(byText(fakerUserGender)).click();                               //radio button
-
-        $("#userNumber").setValue(randomUserPhoneNumber);                                        //text field
-
+        $("#genterWrapper").$(byText(fakerUserGender)).click();                                //radio button
+        $("#userNumber").setValue(fakerUserPhoneNumber);                                         //text field
         $("#dateOfBirthInput").click();                                                            //calendar
         $(".react-datepicker__month-select").selectOption("July");
         $(".react-datepicker__year-select").selectOption("2008");
         $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
-
-        $("#subjectsInput").setValue(randomUserSubject).pressEnter();              //text field-dropdown list
-
-        $("#hobbiesWrapper").$(byText(randomUserHobby)).click();                                   //checkbox
-
-        $("#uploadPicture").uploadFromClasspath("images/Me.jpg");                       //file upload
-
-        $("#currentAddress").setValue(randomUserCurrentAddress);                                  //text area
-
+        $("#subjectsInput").setValue(fakerUserSubject).pressEnter();               //text field-dropdown list
+        $("#hobbiesWrapper").$(byText(fakerUserHobby)).click();                                    //checkbox
+        $("#uploadPicture").uploadFromClasspath(fakerUserPicture);                      //file upload
+        $("#currentAddress").setValue(fakerUserCurrentAddress);                                  //text area
         $("#state").click();                                                     //text fields-dropdown lists
-        $("#stateCity-wrapper").$(byText(randomUserState)).click();
+        $("#stateCity-wrapper").$(byText(fakerUserState)).click();
         $("#city").click();
         $("#stateCity-wrapper").$(byText(randomUserCity)).click();
-
         $("#submit").click();                                                                        //button
 
         $(".modal-dialog").should(appear);                                                        //assertion
-
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text(fakerFirstName), text(fakerLastName),
-                text(fakerUserEmail), text(randomUserPhoneNumber), text(randomUserCurrentAddress));
+                text(fakerUserEmail), text(fakerUserPhoneNumber), text(fakerUserCurrentAddress));
     }
 }
