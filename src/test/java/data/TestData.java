@@ -11,7 +11,8 @@ public class TestData {
             lastName = "Ryzhov",
             userEmail = "dmitryryzhov@mail.com",
             userPhoneNumber = "1234567890",
-            userCurrentAddress = "Penza";
+            userCurrentAddress = "Penza",
+            endPoint = "/automation-practice-form";
 
     static Faker faker = new Faker(new Locale("en-US"));                          //random test data generation
     public static String
