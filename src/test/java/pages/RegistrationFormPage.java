@@ -5,8 +5,7 @@ import tests.TestBase;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
-import static data.TestData.endPoint;
-import static data.TestData.firstName;
+import static data.TestData.*;
 
 public class RegistrationFormPage extends TestBase {
 
@@ -20,6 +19,11 @@ public class RegistrationFormPage extends TestBase {
 
     public RegistrationFormPage setFirstName() {                                                         //заполнить имя
         $("#firstName").setValue(firstName);
+        return this;
+    }
+
+    public RegistrationFormPage setLastName() {                                                      //заполнить фамилию
+        $("#lastName").setValue(lastName);
         return this;
     }
 

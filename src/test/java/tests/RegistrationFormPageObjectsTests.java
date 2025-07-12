@@ -9,6 +9,8 @@ public class RegistrationFormPageObjectsTests extends TestBase {
 
     @Test
     void fullRegistrationFormTest() {
-        registrationFormPage.openRegistrationFormPage();
+        registrationFormPage.openRegistrationFormPage()
+                .setFirstName()
+                .setLastName();
     }
 }
