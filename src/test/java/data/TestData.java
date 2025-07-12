@@ -15,6 +15,7 @@ public class TestData {
             endPoint = "/automation-practice-form";
 
     static Faker faker = new Faker(new Locale("en-US"));                          //random test data generation
+
     public static String
             fakerFirstName = faker.name().firstName(),
             fakerLastName = faker.name().lastName(),
