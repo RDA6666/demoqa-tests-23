@@ -27,5 +27,10 @@ public class RegistrationFormPage extends TestBase {
         return this;
     }
 
+    public RegistrationFormPage setEmail() {                                                           //заполнить email
+        $("#userEmail").setValue(userEmail);
+        return this;
+    }
+
 
 }

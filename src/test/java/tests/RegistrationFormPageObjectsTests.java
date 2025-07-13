@@ -8,9 +8,10 @@ public class RegistrationFormPageObjectsTests extends TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     @Test
-    void fullRegistrationFormTest() {
+    void fullRegistrationFormTest() {                                                   //тест с применением методов POM
         registrationFormPage.openRegistrationFormPage()
                 .setFirstName()
-                .setLastName();
+                .setLastName()
+                .setEmail();
     }
 }
