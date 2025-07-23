@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
@@ -13,13 +15,16 @@ import static data.TestData.*;
 
 public class RegistrationFormRandomDataTests extends TestBase {
 
-    @Test
-    @DisplayName("Позитивный тест с применением генерации тестовых данных")
+    @ValueSource(strings = {
+            "Student Registration Form", "Practice Form"
+    })
+    @ParameterizedTest
+    @DisplayName("Параметризованный позитивный тест с применением генерации тестовых данных")
     @Tag("Web-test")
-    void fullRegistrationTest() {
+    void fullRegistrationTest(String headerName) {
 
         open("/automation-practice-form");
-        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+        $(".practice-form-wrapper").shouldHave(text(headerName));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
