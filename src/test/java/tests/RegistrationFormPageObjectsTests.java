@@ -9,9 +9,9 @@ public class RegistrationFormPageObjectsTests extends TestBase {
 
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
+    @Test
     @DisplayName("Позитивный тест с применением методов POM")
     @Tag("Web-test")
-    @Test
     void fullRegistrationFormTest() {
         registrationFormPage.openRegistrationFormPage()
                 .setFirstName()

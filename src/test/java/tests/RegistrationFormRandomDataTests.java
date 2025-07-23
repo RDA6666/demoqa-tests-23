@@ -13,9 +13,9 @@ import static data.TestData.*;
 
 public class RegistrationFormRandomDataTests extends TestBase {
 
+    @Test
     @DisplayName("Позитивный тест с применением генерации тестовых данных")
     @Tag("Web-test")
-    @Test
     void fullRegistrationTest() {
 
         open("/automation-practice-form");

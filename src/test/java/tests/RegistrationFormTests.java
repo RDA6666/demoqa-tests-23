@@ -13,10 +13,10 @@ import static data.TestData.*;                                                  
 
 public class RegistrationFormTests extends TestBase {
 
+    @Test
     @Disabled
     @DisplayName("Позитивный тест с применением хардкод-данных")
     @Tag("Web-test")
-    @Test
     void fullRegistrationTest() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
