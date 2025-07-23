@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 public class TestBase {
 
     @BeforeEach
-    public void beforeAll() {
+    public void beforeEach() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
