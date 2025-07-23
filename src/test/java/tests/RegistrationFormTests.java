@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.appear;
@@ -10,6 +11,7 @@ import static data.TestData.*;                                                  
 
 public class RegistrationFormTests extends TestBase {
 
+    @DisplayName("Позитивный тест с применением хардкод-данных")
     @Test
     void fullRegistrationTest() {
         open("/automation-practice-form");
